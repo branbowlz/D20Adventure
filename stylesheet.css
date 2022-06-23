@@ -1,0 +1,25 @@
+body {
+  background: url("dungeoncave.jpg") no-repeat center fixed;
+}
+p {
+  color: white;
+}
+h1 {
+  color: white;
+}
+#win {
+  color: green;
+}
+#lose {
+  color: red;
+}
+#tie {
+  color: yellow;
+}
+button {
+  background-color: blueviolet;
+  border-color: blueviolet;
+}
+#playerroll {
+  display: none;
+}

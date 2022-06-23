@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>D20 Roller</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <h1>Welcome Brave Adventurer!</h1>
+    <p id="introtext">
+      Welcome brave adventurer! No need to be alarmed I mean you no harm but--I
+      can't say the same about that monster in front of you.
+    </p>
+    <p id ="introtext">Quick! Roll your trusty d20 dice and see what you get!</p>
+    <p id ="introtext">
+      Wait, what? You want <em>me</em> to help? Why I'm just a harmless
+      narrator, I can't do a thing so it's up to you! All you have to do is roll higher than the monster! Good luck, you're going to need it!
+      When you are ready, click the "Roll the Dice!" button and if you want to play again, press the "Play Again" button.
+    </p>
+    <p id="monsterroll"></p>
+    <div id="playthegame">
+    <p id="playerroll"></p>
+    <p id="result"></p>
+    </div>
+<button type="button" onclick="toggleText2();toggleText();">Roll the Dice!</button>
+<br />
+<br />
+<button type="button" onclick="window.location.reload()">Play Again!</buton>
+<script>
+
+function toggleText() {
+  var text = document.getElementById("playerroll");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+function toggleText2() {
+  var text = document.getElementById("result");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+let r1, r2;
+r1 = Math.floor((Math.random()*20)+1);
+r2 = Math.floor((Math.random()*20)+1);
+document.getElementById("monsterroll").innerHTML="Monster roll: " + r1;
+document.getElementById("playerroll").innerHTML="Player roll: " + r2;
+if(r1 == r2)
+{
+document.getElementById("result").innerHTML="It's a tie Game! You and the monster just stand there...awkwardly...";
+}else if(r2>r1)
+{
+  document.getElementById("result").innerHTML="You win!  Congrats!";
+}else
+{
+  document.getElementById("result").innerHTML="You lost, too bad!";
+}
+      </script>
+  </body>
+</html>
